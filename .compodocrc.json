@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/@compodoc/compodoc/src/config/schema.json",
+  "theme": "material",
+  "disableDomTree": true,
+  "disablePrivate": true,
+  "disableInternal": true,
+  "disableProtected": true,
+  "disableLifeCycleHooks": true,
+  "name": "TranslateObjectLoader",
+  "tsconfig": "./projects/translate-object-loader/tsconfig.lib.json"
+}

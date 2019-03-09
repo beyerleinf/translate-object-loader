@@ -1,9 +1,33 @@
 {
   "name": "translate-object-loader",
+  "description": "Simple loader for ngx-translate that uses an object library.",
+  "author": {
+    "name": "Fabian Beyerlein",
+    "email": "dev@beyerleinf.de"
+  },
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0",
     "@ngx-translate/core": "^11.0.1"
-  }
+  },
+  "keywords": [
+    "angular",
+    "ngx-translate",
+    "object",
+    "loader",
+    "object-loader"
+  ],
+  "homepage": "https://github.com/beyerleinf/translate-object-loader#README",
+  "bugs": {
+    "url": "https://github.com/beyerleinf/translate-object-loader/issues",
+    "email": "dev@beyerleinf.de"
+  },
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Fabian Beyerlein",
+      "email": "dev@beyerleinf.de"
+    }
+  ]
 }

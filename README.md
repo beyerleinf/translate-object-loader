@@ -1,27 +1,97 @@
-# ObjectLoader
+# TranslateObjectLoader
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.5.
+> Simple loader for [ngx-translate](https://github.com/ngx-translate) that uses an object library.
 
-## Development server
+[![Maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader)
+[![license](https://img.shields.io/github/license/beyerleinf/translate-object-loader.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader/blob/master/LICENSE.md)
+[![npm](https://img.shields.io/npm/v/translate-object-loader.svg?style=flat-square)](https://npmjs.com/packages/translate-object-loader)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[![Travis](https://img.shields.io/travis/beyerleinf/translate-object-loader.svg?style=flat-square)](https://travis-ci.org/beyerleinf/translate-object-loader)
+[![Codecov](https://img.shields.io/codecov/c/github/beyerleinf/translate-object-loader.svg?style=flat-square)](https://codecov.io/gh/beyerleinf/translate-object-loader)
+[![Known Vulnerabilities](https://snyk.io/test/github/beyerleinf/translate-object-loader/badge.svg?style=flat-square)](https://snyk.io/test/github/beyerleinf/translate-object-loader)
 
-## Code scaffolding
+This loader is useful if you have multiple sub-modules in your Angular application which each have their own translation definitions and you want to have them all managed separately.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+* [Installation](#installation)
+* [Usage](#usage)
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```bash
+npm install --save translate-object-loader
+```
 
-## Running unit tests
+## Usage
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+You can also check out the [demo project]() if you just want to see the code.
 
-## Running end-to-end tests
+Follow instructions at [@ngx-translate/core](https://github.com/ngx-translate/core#installation) on how to install ngx-translate itself.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Then simply import the loader and provide it to the `TranslateModule`.
 
-## Further help
+```ts
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateObjectLoader} from 'translate-object-loader';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@NgModule({
+    imports: [
+        BrowserModule,
+        TranslateModule.forRoot({
+            loader: 
+              provide: TranslateLoader,
+              useClass: TranslateObjectLoader,
+            }
+        })
+    ],
+    bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+Now, adding your translation definition is pretty simple. The only thing to keep in mind is that the top level objects of your definition should *always* be a language code because we select the language based on that.  
+
+Also, the last definition you import will always overwrite any keys that might already be defined in previous definitions.
+
+`app.module.ts`
+```ts
+import {Library} from 'translate-object-loader';
+import {firstModuleTranslations} from 'first-module';
+import {secondModuleTranslations} from 'second-module';
+
+// Import each separately
+Library.add(firstModuleTranslations);
+Library.add(secondModuleTranslations);
+
+// Or import multiple at the same time
+Library.add(firstModuleTranslations, secondModuleTranslations);
+
+```
+
+`first-module.ts`
+```ts
+import {TranslationDefinition} from 'translate-object-loader';
+
+export const firstModuleTranslations: TranslationDefinition = {
+  de: {
+    key1: 'Schlüssel1',
+  },
+  en: {
+    key1: 'Key1',
+  },
+};
+```
+
+`second-module.ts`
+```ts
+import {TranslationDefinition} from 'translate-object-loader';
+
+export const secondModuleTranslations: TranslationDefinition = {
+  de: {
+    key2: 'Schlüssel2',
+  },
+  en: {
+    key1: 'Overwriting',
+    key2: 'Key2',
+  },
+};
+```

@@ -5,7 +5,6 @@ import {Component, OnInit} from '@angular/core';
   template: `
     <p translate="key1"></p>
     <p translate="key2"></p>
-    <p translate="key3"></p>
   `,
   styles: []
 })

@@ -1,6 +1,6 @@
 {
   "name": "object-loader",
-  "description": "TranslateLoader for ngx-translate.",
+  "description": "Simple loader for ngx-translate that uses an object library.",
   "author": {
     "name": "Fabian Beyerlein",
     "email": "dev@beyerleinf.de"
@@ -10,11 +10,17 @@
     "start": "ng serve demo",
     "build:demo": "ng build demo-module && ng build demo ",
     "build:demo:prod": "ng build demo-module && ng build demo --configuration=prod",
-    "build:lib": "ng build translate-object-loader",
+    "build:lib": "ng build translate-object-loader && npm run copy",
     "lint": "ng lint",
     "test": "npm run test:loader",
     "test:loader": "ng test translate-object-loader",
-    "doc": "npx compodoc"
+    "doc": "npx compodoc",
+    "copy": "npm run copy:readme && npm run copy:changelog && npm run copy:license",
+    "copy:readme": "cp ./README.md ./dist/translate-object-loader/",
+    "copy:changelog": "cp ./CHANGELOG.md ./dist/translate-object-loader/",
+    "copy:license": "cp ./LICENSE.md ./dist/translate-object-loader/",
+    "publish:lib": "npm publish ./dist/translate-object-loader",
+    "prepublish": "npm run build:lib"
   },
   "keywords": [
     "angular",

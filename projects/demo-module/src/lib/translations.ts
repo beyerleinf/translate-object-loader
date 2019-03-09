@@ -14,7 +14,7 @@ export const secondModuleTranslations: TranslationDefinition = {
     key2: 'Schlüssel2',
   },
   en: {
-    key1: 'Overwriting',
+    key1: 'Overwriting Key1',
     key2: 'Key2',
   },
 };
