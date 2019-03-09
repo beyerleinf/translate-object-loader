@@ -4,7 +4,7 @@
 
 [![Maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader)
 [![license](https://img.shields.io/github/license/beyerleinf/translate-object-loader.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader/blob/master/LICENSE.md)
-[![npm](https://img.shields.io/npm/v/translate-object-loader.svg?style=flat-square)](https://npmjs.com/packages/translate-object-loader)
+[![npm](https://img.shields.io/npm/v/translate-object-loader.svg?style=flat-square)](https://npmjs.com/package/translate-object-loader)
 
 [![Travis](https://img.shields.io/travis/beyerleinf/translate-object-loader.svg?style=flat-square)](https://travis-ci.org/beyerleinf/translate-object-loader)
 [![Codecov](https://img.shields.io/codecov/c/github/beyerleinf/translate-object-loader.svg?style=flat-square)](https://codecov.io/gh/beyerleinf/translate-object-loader)
@@ -23,7 +23,7 @@ npm install --save translate-object-loader
 
 ## Usage
 
-You can also check out the [demo project]() if you just want to see the code.
+You can also check out the [demo project](https://github.com/beyerleinf/translate-object-loader/tree/master/projects/demo) if you just want to see the code.
 
 Follow instructions at [@ngx-translate/core](https://github.com/ngx-translate/core#installation) on how to install ngx-translate itself.
 
