@@ -30,6 +30,12 @@
       ],
       "translate-object-loader/*": [
         "dist/translate-object-loader/*"
+      ],
+      "demo-module": [
+        "dist/demo-module"
+      ],
+      "demo-module/*": [
+        "dist/demo-module/*"
       ]
     }
   }
