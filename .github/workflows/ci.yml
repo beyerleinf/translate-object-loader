@@ -1,0 +1,38 @@
+name: Angular CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install
+        uses: ianwalter/puppeteer@3.0.0
+        with:
+          args: npm ci
+      - name: Lint
+        uses: ianwalter/puppeteer@3.0.0
+        with:
+          args: npm run lint
+      - name: Test
+        uses: ianwalter/puppeteer@3.0.0
+        with:
+          args: npm test
+      - name: Build
+        uses: ianwalter/puppeteer@3.0.0
+        with:
+          args: npm run build:lib
+      - uses: codecov/codecov-action@v1
+        with:
+          file: ./coverage/coverage-final.json
