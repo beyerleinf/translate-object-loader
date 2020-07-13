@@ -2,7 +2,7 @@
 
 > Simple loader for [ngx-translate](https://github.com/ngx-translate) that uses an object library.
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader)
+[![Maintenance](https://img.shields.io/maintenance/yes/2020.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader)
 [![license](https://img.shields.io/github/license/beyerleinf/translate-object-loader.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader/blob/master/LICENSE.md)
 [![npm](https://img.shields.io/npm/v/translate-object-loader.svg?style=flat-square)](https://npmjs.com/package/translate-object-loader)
 
@@ -12,8 +12,8 @@
 
 This loader is useful if you have multiple sub-modules in your Angular application which each have their own translation definitions and you want to have them all managed separately.
 
-* [Installation](#installation)
-* [Usage](#usage)
+- [Installation](#installation)
+- [Usage](#usage)
 
 ## Installation
 
@@ -37,7 +37,7 @@ import {TranslateObjectLoader} from 'translate-object-loader';
     imports: [
         BrowserModule,
         TranslateModule.forRoot({
-            loader: 
+            loader:
               provide: TranslateLoader,
               useClass: TranslateObjectLoader,
             }
@@ -48,15 +48,16 @@ import {TranslateObjectLoader} from 'translate-object-loader';
 export class AppModule { }
 ```
 
-Now, adding your translation definition is pretty simple. The only thing to keep in mind is that the top level objects of your definition should *always* be a language code because we select the language based on that.  
+Now, adding your translation definition is pretty simple. The only thing to keep in mind is that the top level objects of your definition should _always_ be a language code because we select the language based on that.
 
 Also, the last definition you import will always overwrite any keys that might already be defined in previous definitions.
 
 `app.module.ts`
+
 ```ts
-import {Library} from 'translate-object-loader';
-import {firstModuleTranslations} from 'first-module';
-import {secondModuleTranslations} from 'second-module';
+import { Library } from 'translate-object-loader';
+import { firstModuleTranslations } from 'first-module';
+import { secondModuleTranslations } from 'second-module';
 
 // Import each separately
 Library.add(firstModuleTranslations);
@@ -64,12 +65,12 @@ Library.add(secondModuleTranslations);
 
 // Or import multiple at the same time
 Library.add(firstModuleTranslations, secondModuleTranslations);
-
 ```
 
 `first-module.ts`
+
 ```ts
-import {TranslationDefinition} from 'translate-object-loader';
+import { TranslationDefinition } from 'translate-object-loader';
 
 export const firstModuleTranslations: TranslationDefinition = {
   de: {
@@ -82,8 +83,9 @@ export const firstModuleTranslations: TranslationDefinition = {
 ```
 
 `second-module.ts`
+
 ```ts
-import {TranslationDefinition} from 'translate-object-loader';
+import { TranslationDefinition } from 'translate-object-loader';
 
 export const secondModuleTranslations: TranslationDefinition = {
   de: {
