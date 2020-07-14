@@ -1,32 +1,32 @@
-import {Library} from './library';
-import * as util from './util';
+import { Library } from './library';
+import { Util } from './util';
 
 describe('Library', () => {
   let mergeSpy: jasmine.Spy;
 
   beforeEach(() => {
-    mergeSpy = spyOnProperty(util, 'merge');
+    mergeSpy = spyOn(Util, 'merge');
   });
 
   describe('add', () => {
     it('should assign merge result to translations', () => {
-      const value = {de: {abc: 'def'}, en: {ghi: 'kjl'}};
-      mergeSpy.and.returnValue(() => value);
+      const value = { de: { abc: 'def' }, en: { ghi: 'kjl' } };
+      mergeSpy.and.returnValue(value);
 
-      Library.add({de: {something: 'abc'}});
+      Library.add({ de: { something: 'abc' } });
 
-      expect(Library.get('de')).toEqual({abc: 'def'});
+      expect(Library.get('de')).toEqual({ abc: 'def' });
     });
   });
 
   describe('get', () => {
     it('should return correct object', () => {
-      const value = {de: {abc: 'def'}, en: {ghi: 'kjl'}};
-      mergeSpy.and.returnValue(() => value);
+      const value = { de: { abc: 'def' }, en: { ghi: 'kjl' } };
+      mergeSpy.and.returnValue(value);
 
-      Library.add({de: {something: 'abc'}});
+      Library.add({ de: { something: 'abc' } });
 
-      expect(Library.get('en')).toEqual({ghi: 'kjl'});
+      expect(Library.get('en')).toEqual({ ghi: 'kjl' });
     });
   });
 });

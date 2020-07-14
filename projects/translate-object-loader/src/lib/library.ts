@@ -1,5 +1,5 @@
-import {TranslationDefinition} from './models';
-import {merge} from './util';
+import { TranslationDefinition } from './models';
+import { Util } from './util';
 
 export class Library {
   private static translationDefinitions: TranslationDefinition = {};
@@ -8,13 +8,12 @@ export class Library {
    * Add translation definitions to the translation library.
    * You can even add multiple definitions at the same time.
    *
-   *
    * The root should always contain language abbrevations like `de` or `en` to be able to select a language.
    *
    * @param arg The definitions to add.
    */
   static add(...arg: TranslationDefinition[]): void {
-    Library.translationDefinitions = merge(Library.translationDefinitions, ...arg);
+    Library.translationDefinitions = Util.merge(Library.translationDefinitions, ...arg);
   }
 
   /**

@@ -1,1 +1,1 @@
-export {TranslationDefinition} from './translation-definition';
+export { TranslationDefinition } from './translation-definition';

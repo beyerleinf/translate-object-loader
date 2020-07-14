@@ -1,1 +1,1 @@
-export {merge} from './merge';
+export { Util } from './merge';
