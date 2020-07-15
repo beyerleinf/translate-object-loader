@@ -35,4 +35,4 @@ jobs:
           args: npm run build:lib
       - uses: codecov/codecov-action@v1
         with:
-          file: ./coverage/coverage-final.json
+          file: ./coverage/translate-object-loader/coverage-final.json
