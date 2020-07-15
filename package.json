@@ -10,7 +10,7 @@
     "start": "ng serve demo",
     "build:demo": "ng build demo-module && ng build demo ",
     "build:demo:prod": "ng build demo-module && ng build demo --configuration=prod",
-    "build:lib": "ng build translate-object-loader && npm run copy",
+    "build:lib": "ng build translate-object-loader --configuration=production && npm run copy",
     "lint": "ng lint",
     "test": "npm run test:loader",
     "test:loader": "ng test translate-object-loader",
