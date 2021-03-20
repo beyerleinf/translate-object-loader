@@ -1,4 +1,4 @@
-import {TranslationDefinition} from 'translate-object-loader';
+import { TranslationDefinition } from 'translate-object-loader';
 
 export const firstModuleTranslations: TranslationDefinition = {
   de: {
