@@ -32,7 +32,7 @@ export class Util {
    * @returns Whether arg is an object.
    * @internal
    */
-  private static isObject(arg: any): arg is object {
+  private static isObject(arg: any): boolean {
     return arg && typeof arg === 'object';
   }
 }
