@@ -2,7 +2,7 @@
 
 > Simple loader for [ngx-translate](https://github.com/ngx-translate) that uses an object library.
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2020.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader)
+[![Maintenance](https://img.shields.io/maintenance/yes/2021.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader)
 [![license](https://img.shields.io/github/license/beyerleinf/translate-object-loader.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader/blob/master/LICENSE.md)
 [![npm](https://img.shields.io/npm/v/translate-object-loader.svg?style=flat-square)](https://npmjs.com/package/translate-object-loader)
 
@@ -28,13 +28,14 @@ This loader is useful if you have multiple sub-modules in your Angular applicati
 | ------------------ | ----------- |
 | < 6.0.0            | not tested  |
 | >= 6.0.0 <= 10.0.0 | yes (2.x.x) |
+| 11.x.x             | yes (3.x.x) |
 
 ### ngx-translate
 
-| ngx-translate       | Supported   |
-| ------------------- | ----------- |
-| < 10.0.0            | not tested  |
-| >= 10.0.0 <= 13.0.0 | yes (2.x.x) |
+| ngx-translate       | Supported      |
+| ------------------- | -------------- |
+| < 10.0.0            | not tested     |
+| >= 10.0.0 <= 13.0.0 | yes (>= 2.x.x) |
 
 ## Installation
 
@@ -46,13 +47,13 @@ npm install --save translate-object-loader
 
 You can also check out the [demo project](https://github.com/beyerleinf/translate-object-loader/tree/master/projects/demo) if you just want to see the code.
 
-Follow instructions at [@ngx-translate/core](https://github.com/ngx-translate/core#installation) on how to install ngx-translate itself.
+Follow the instructions at [@ngx-translate/core](https://github.com/ngx-translate/core#installation) on how to install ngx-translate itself.
 
 Then simply import the loader and provide it to the `TranslateModule`.
 
 ```ts
-import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
-import {TranslateObjectLoader} from 'translate-object-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateObjectLoader } from 'translate-object-loader';
 
 @NgModule({
     imports: [
@@ -73,9 +74,9 @@ Now, adding your translation definition is pretty simple. The only thing to keep
 
 Also, the last definition you import will always overwrite any keys that might already be defined in previous definitions.
 
-`app.module.ts`
-
 ```ts
+// app.module.ts
+
 import { Library } from 'translate-object-loader';
 import { firstModuleTranslations } from 'first-module';
 import { secondModuleTranslations } from 'second-module';
@@ -88,9 +89,9 @@ Library.add(secondModuleTranslations);
 Library.add(firstModuleTranslations, secondModuleTranslations);
 ```
 
-`first-module.ts`
-
 ```ts
+// first-module.ts
+
 import { TranslationDefinition } from 'translate-object-loader';
 
 export const firstModuleTranslations: TranslationDefinition = {
@@ -103,9 +104,9 @@ export const firstModuleTranslations: TranslationDefinition = {
 };
 ```
 
-`second-module.ts`
-
 ```ts
+// second-module.ts
+
 import { TranslationDefinition } from 'translate-object-loader';
 
 export const secondModuleTranslations: TranslationDefinition = {

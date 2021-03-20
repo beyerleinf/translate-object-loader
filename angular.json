@@ -34,7 +34,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -149,7 +148,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -175,8 +173,7 @@
                 }
               ],
               "extractLicenses": true,
-              "outputHashing": "all",
-              "extractCss": true
+              "outputHashing": "all"
             }
           }
         },
@@ -218,32 +215,6 @@
         }
       }
     },
-    "demo-e2e": {
-      "root": "projects/demo-e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/demo-e2e/protractor.conf.js",
-            "devServerTarget": "demo:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "demo:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "projects/demo-e2e/tsconfig.e2e.json",
-            "exclude": ["**/node_modules/**"]
-          }
-        }
-      }
-    },
     "translate-object-loader": {
       "root": "projects/translate-object-loader",
       "sourceRoot": "projects/translate-object-loader/src",
@@ -251,7 +222,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/translate-object-loader/tsconfig.lib.json",
             "project": "projects/translate-object-loader/ng-package.json"
@@ -291,7 +262,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/demo-module/tsconfig.lib.json",
             "project": "projects/demo-module/ng-package.json"
