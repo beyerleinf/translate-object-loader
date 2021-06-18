@@ -29,6 +29,7 @@ This loader is useful if you have multiple sub-modules in your Angular applicati
 | < 6.0.0            | not tested  |
 | >= 6.0.0 <= 10.0.0 | yes (2.x.x) |
 | 11.x.x             | yes (3.x.x) |
+| 12.x.x             | yes (4.x.x) |
 
 ### ngx-translate
 
