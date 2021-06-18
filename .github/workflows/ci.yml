@@ -8,7 +8,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [12.x, 14.x, 16.x]
 
     steps:
       - name: Checkout
@@ -17,22 +17,18 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: npm chache
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
       - name: Install
-        uses: ianwalter/puppeteer@3.0.0
-        with:
-          args: npm ci
-      - name: Lint
-        uses: ianwalter/puppeteer@3.0.0
-        with:
-          args: npm run lint
+        run: npm ci
       - name: Test
-        uses: ianwalter/puppeteer@3.0.0
-        with:
-          args: npm test
+        run: npm test
+      - name: Lint
+        run: npm run lint
       - name: Build
-        uses: ianwalter/puppeteer@3.0.0
-        with:
-          args: npm run build:lib
-      - uses: codecov/codecov-action@v1
-        with:
-          file: ./coverage/translate-object-loader/coverage-final.json
+        run: npm run build:prod
