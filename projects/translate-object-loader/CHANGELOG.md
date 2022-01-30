@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/beyerleinf/translate-object-loader/compare/v4.0.0...v5.0.0) (2022-01-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* Upgrade to Angular 13
+
+### Features
+
+* Upgrade to Angular 13 ([629fef2](https://github.com/beyerleinf/translate-object-loader/commit/629fef2a20a769c2b8d8c08b20b88870357fcc96))
+
 ## [4.0.0](https://github.com/beyerleinf/translate-object-loader/compare/v2.0.3...v4.0.0) (2021-06-18)
 
 
