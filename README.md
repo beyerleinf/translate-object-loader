@@ -2,7 +2,7 @@
 
 > Simple loader for [ngx-translate](https://github.com/ngx-translate) that uses an object library.
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2021.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader)
+[![Maintenance](https://img.shields.io/maintenance/yes/2022.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader)
 [![license](https://img.shields.io/github/license/beyerleinf/translate-object-loader.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader/blob/master/LICENSE.md)
 [![npm](https://img.shields.io/npm/v/translate-object-loader.svg?style=flat-square)](https://npmjs.com/package/translate-object-loader)
 
@@ -30,6 +30,7 @@ This loader is useful if you have multiple sub-modules in your Angular applicati
 | >= 6.0.0 <= 10.0.0 | yes (2.x.x) |
 | 11.x.x             | yes (3.x.x) |
 | 12.x.x             | yes (4.x.x) |
+| 13.x.x             | yes (5.x.x) |
 
 ### ngx-translate
 
@@ -37,6 +38,7 @@ This loader is useful if you have multiple sub-modules in your Angular applicati
 | ------------------- | -------------- |
 | < 10.0.0            | not tested     |
 | >= 10.0.0 <= 13.0.0 | yes (>= 2.x.x) |
+| 14.x.x              | yes (5.x.x)    |
 
 ## Installation
 
