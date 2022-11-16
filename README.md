@@ -31,6 +31,7 @@ This loader is useful if you have multiple sub-modules in your Angular applicati
 | 11.x.x             | yes (3.x.x) |
 | 12.x.x             | yes (4.x.x) |
 | 13.x.x             | yes (5.x.x) |
+| 14.x.x             | yes (6.x.x) |
 
 ### ngx-translate
 
