@@ -5,7 +5,7 @@
     "name": "Fabian Beyerlein",
     "email": "dev@beyerleinf.de"
   },
-  "version": "5.0.0",
+  "version": "6.0.0",
   "peerDependencies": {
     "@angular/common": ">=14.0.0 <15.0.0",
     "@angular/core": ">=14.0.0 <15.0.0",
