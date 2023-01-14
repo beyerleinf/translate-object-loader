@@ -2,11 +2,11 @@
 
 > Simple loader for [ngx-translate](https://github.com/ngx-translate) that uses an object library.
 
-[![Maintenance](https://img.shields.io/maintenance/yes/2022.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader)
+[![Maintenance](https://img.shields.io/maintenance/yes/2023.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader)
 [![license](https://img.shields.io/github/license/beyerleinf/translate-object-loader.svg?style=flat-square)](https://github.com/beyerleinf/translate-object-loader/blob/master/LICENSE.md)
 [![npm](https://img.shields.io/npm/v/translate-object-loader.svg?style=flat-square)](https://npmjs.com/package/translate-object-loader)
 
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/beyerleinf/translate-object-loader/Angular%20CI?style=flat-square)](https://github.com/beyerleinf/translate-object-loader/actions?query=workflow%3A%22Angular+CI%22)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/beyerleinf/translate-object-loader/ci.yml?style=flat-square)](https://github.com/beyerleinf/translate-object-loader/actions?query=workflow%3A%22Angular+CI%22)
 [![Codecov](https://img.shields.io/codecov/c/github/beyerleinf/translate-object-loader.svg?style=flat-square)](https://codecov.io/gh/beyerleinf/translate-object-loader)
 [![Known Vulnerabilities](https://snyk.io/test/github/beyerleinf/translate-object-loader/badge.svg?style=flat-square)](https://snyk.io/test/github/beyerleinf/translate-object-loader)
 
@@ -32,6 +32,7 @@ This loader is useful if you have multiple sub-modules in your Angular applicati
 | 12.x.x             | yes (4.x.x) |
 | 13.x.x             | yes (5.x.x) |
 | 14.x.x             | yes (6.x.x) |
+| 15.x.x             | yes (7.x.x) |
 
 ### ngx-translate
 
@@ -39,7 +40,7 @@ This loader is useful if you have multiple sub-modules in your Angular applicati
 | ------------------- | -------------- |
 | < 10.0.0            | not tested     |
 | >= 10.0.0 <= 13.0.0 | yes (>= 2.x.x) |
-| 14.x.x              | yes (5.x.x)    |
+| 14.x.x              | yes (>=5.x.x)  |
 
 ## Installation
 
