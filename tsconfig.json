@@ -11,7 +11,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es2020",
+    "target": "ES2022",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
     "paths": {
@@ -19,7 +19,8 @@
       "translate-object-loader/*": ["dist/translate-object-loader/*"],
       "demo-module": ["dist/demo-module"],
       "demo-module/*": ["dist/demo-module/*"]
-    }
+    },
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
